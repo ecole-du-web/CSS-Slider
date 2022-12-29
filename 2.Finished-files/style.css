@@ -1,0 +1,113 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.slider-1 {
+  max-width: 600px;
+  margin: 100px auto;
+  overflow: hidden;
+  border: 1px solid #f1f1f1;
+
+}
+.slider-1 .slider {
+  animation: slider-1 12s infinite ease-in-out;
+  display: flex;
+
+  /* Si on veut faire glisser vers la droite */
+  /* Il faut aussi changer l'animation(transform) en valeurs positives */
+  /* flex-direction: row-reverse; */
+}
+.slider-1 p {
+  background: #000;
+  flex-shrink: 0;
+  padding: 72px 0;
+  width: 100%;
+  text-align: center;
+  font-size: 45px;
+  color: #f1f1f1;
+}
+
+
+/* 
+   5% par transition, nombre choisi arbitrairement.
+
+   reste divisé par nb de pauses
+   80(%) / 4 = 20(%) par pause
+*/
+
+@keyframes slider-1 {
+  0%,
+  20% {
+    transform: translateX(0);
+  }
+  25%,
+  45% {
+    transform: translateX(-100%);
+  }
+  50%,
+  70% {
+    transform: translateX(-200%);
+  }
+  75%,
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+} 
+
+/* Verticale */
+
+.slider-2 {
+  max-width: 600px;
+  height: 200px;
+  margin: 100px auto;
+  overflow: hidden;
+  border: 1px solid #f1f1f1;
+}
+.slider-2 .slider {
+  height: 100%;
+  animation: slider-2 12s infinite ease-in-out;
+  
+  /* Pour inverser l'animation */
+  /* display: flex; 
+  flex-direction: column-reverse; */
+}
+.slider-2 p {
+  flex-shrink: 0;
+  padding: 72px 0;
+  width: 100%;
+  text-align: center;
+  font-size: 45px;
+  color: #f1f1f1;
+}
+@keyframes slider-2 {
+  0%,
+  20% {
+    transform: translateY(0);
+  }
+  25%,
+  45% {
+    transform: translateY(-100%);
+  }
+  50%,
+  70% {
+    transform: translateY(-200%);
+  }
+  75%,
+  95% {
+    transform: translateY(-300%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+}
+
